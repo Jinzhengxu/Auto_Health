@@ -1,8 +1,17 @@
 # 健康自动打卡系统
+![build](https://img.shields.io/badge/build-passing-brightgreen)
+![python3](https://img.shields.io/badge/python-3.6.9-blue)
 
-## Linux服务器环境配置
+## Change Log
+### v1.0.0
++ 通过API实现验证码识别
++ 支持Linux服务器全天运行
++ Shell脚本支持Mac OS X通过corntab或launchctl进行定时
++ 支持多用户打卡模式
 
-python版本：3.6.8
+## 安装与环境
+### Linux服务器环境配置
+python版本：3.6.9
 
 sudo apt install python3-pip
 
