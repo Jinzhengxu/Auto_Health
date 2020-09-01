@@ -9,6 +9,7 @@
 + 支持Linux服务器全天运行
 + Shell脚本支持Mac OS X通过corntab或launchctl进行定时
 + 支持多用户打卡模式
++ 邮箱自动提醒是否打卡成功
 
 ## 安装与环境
 ### Linux服务器环境配置
@@ -86,3 +87,37 @@ pip3 install pyautogui
 ## 使用
 首先下载并解压本repo，进入你所使用的系统文件夹，windows的代码和mac相同。
 
+接下来需要修改`info.py`文件中的API密钥：
+```
+pd_id = "1256123"     #用户中心页可以查询到pd信息
+pd_key = "13123"
+app_id = "321236"     #开发者分成用的账号，在开发者中心可以查询到
+app_key = "12312"
+```
+上面的四个密钥需要在[打码平台](http://www.fateadm.com/user_home.php)注册后获得。
+
+然后修改发送打卡信息的邮箱的配置,这些信息一般可以在邮箱的设置中找到:
+```
+MAIL_USER = "your-mail.com"        # 用于发送通知的邮箱
+MAIL_PWD = "your-authorization-code"    # 该邮箱的授权码
+```
+
+最后添加打卡人的信息，可以添加多条：
+```
+# 多用户
+users = list()
+#users.append(User("id", "password", "email", "province", "city"))
+```
+比如你在山东省济南市，接受打卡信息的邮箱是11112@qq.com，学号是1111，密码是1224，那就在这个文件中加一句：
+```
+users.append(User("1111", "1224", "11112@qq.com", "山东省", "济南市"))
+```
+这里需要特别注意的一点是，省份和城市必须和打卡系统中的完全匹配。
+
+修改完信息后，终端执行就可以了
+```
+python3 main.py
+```
+不要关闭终端。
+
+打卡的日志文件会保存在当前文件夹下的`Program-log.txt`文件中。
