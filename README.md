@@ -121,3 +121,6 @@ python3 main.py
 不要关闭终端。
 
 打卡的日志文件会保存在当前文件夹下的`Program-log.txt`文件中。
+
+## License
+![GPL2](https://img.shields.io/eclipse-marketplace/l/notepad4e)
