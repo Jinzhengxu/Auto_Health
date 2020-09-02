@@ -10,7 +10,9 @@ class User:
         self.email = email
         self.province = province
         self.city = city
-        
+
+daka_time="08:25"
+
 pd_id = "1256123"     #用户中心页可以查询到pd信息
 pd_key = "13123"
 app_id = "321236"     #开发者分成用的账号，在开发者中心可以查询到

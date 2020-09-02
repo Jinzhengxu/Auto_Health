@@ -159,7 +159,7 @@ def daily():
         logging.info("Emailing to User {0} for notification".format(user.uid))
     logging.info("Emailing is finished")
 
-schedule.every().day.at("08:25").do(daily)
+schedule.every().day.at(daka_time).do(daily)
 while True:
     schedule.run_pending()
     time.sleep(1)
