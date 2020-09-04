@@ -65,11 +65,17 @@ unzip chromedriver_linux64.zip
 
 sudo mv chromedriver /usr/bin/ 
 ```
+#### 复制代码到本地
+
 ```
 wget https://github.com/Jinzhengxu/Auto_Health/archive/master.zip
 
-unzip master.zip 
+unzip master.zip	
 ```
+
+#### 注意事项
+
+在服务器的图形界面中将自动锁屏设置为`Never`，否则可能无法成功调用浏览器。
 
 ### Mac OS X环境配置
 
