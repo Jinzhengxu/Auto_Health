@@ -4,6 +4,8 @@
 ![bilibili](https://img.shields.io/badge/bilibili-support-ff69b4)
 
 ## Change Log
+### v1.1.0
++ 针对Linux版本增加自主设定打卡时间
 ### v1.0.0
 + 通过API实现验证码识别
 + 支持Linux服务器全天运行
@@ -38,7 +40,7 @@ pip3 install --upgrade requests
 #### 配置xclip
 ```
 sudo apt-get install libxss1 libappindicator1 libindicator7
-
+sudo apt-get install python3-tk python3-dev
 sudo apt-get install xclip
 ```
 #### 安装Chrome浏览器和chromedriver
@@ -58,10 +60,11 @@ unzip chromedriver_linux64.zip
 
 sudo mv chromedriver /usr/bin/ 
 ```
+```
 wget https://github.com/Jinzhengxu/Auto_Health/archive/master.zip
 
 unzip master.zip 
-
+```
 
 ### Mac OS X环境配置
 
@@ -96,6 +99,10 @@ app_key = "12312"
 ```
 上面的四个密钥需要在[打码平台](http://www.fateadm.com/user_home.php)注册后获得。
 
+修改每天固定的打卡时间，注意一定要按照`HH:MM` 的形式：
+```
+daka_time= "08:21"
+```
 然后修改发送打卡信息的邮箱的配置,这些信息一般可以在邮箱的设置中找到:
 ```
 MAIL_USER = "your-mail.com"        # 用于发送通知的邮箱
