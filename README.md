@@ -4,7 +4,12 @@
 ![bilibili](https://img.shields.io/badge/bilibili-support-ff69b4)
 
 ## Change Log
+### v1.1.1 Sep 4
+
++ 修复检测不到提示框的情况
+
 ### v1.1.0
+
 + 针对Linux版本增加自主设定打卡时间
 ### v1.0.0
 + 通过API实现验证码识别
