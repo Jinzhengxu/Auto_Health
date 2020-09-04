@@ -49,9 +49,10 @@ def sign_in(user):
     rsp=captcha_pred()
     captcha.send_keys(rsp.pred_rsp.value)
     sign_bt.click()
-    time.sleep(5)
 
     try:
+        wait = WebDriverWait(driver, 10)
+        wait.until(EC.alert_is_present())
         alert = browser.switch_to.alert
         if alert.text == "请输入有效验证码":
             logging.info("Captcha for user <{0}> is wrong, now try again.".format(user.uid))
@@ -118,8 +119,10 @@ def sub_info(browser, user):
     rsp=captcha_pred()
     captcha.send_keys(rsp.pred_rsp.value)
     sub_bt.click()
-    time.sleep(5)
+    
     try:
+        wait = WebDriverWait(driver, 10)
+        wait.until(EC.alert_is_present())
         alert = browser.switch_to.alert
         if alert.text == "请输入有效验证码":
             logging.info("Captcha for user <{0}> is wrong, now try again.".format(user.uid))
