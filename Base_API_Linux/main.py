@@ -136,6 +136,7 @@ def sub_info(browser, user):
         return 0;
     except:
         return 1;
+    return 1;
 
 def mail(mail_text, mail_to):
     # set the mail context
