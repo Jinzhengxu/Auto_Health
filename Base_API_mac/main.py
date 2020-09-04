@@ -53,7 +53,7 @@ def sign_in(user):
     captcha.send_keys(rsp.pred_rsp.value)
     sign_bt.click()
     try:
-        wait = WebDriverWait(driver, 10)
+        wait = WebDriverWait(browser, 10)
         wait.until(EC.alert_is_present())
         alert = browser.switch_to.alert
         if alert.text == "请输入有效验证码":
@@ -124,7 +124,7 @@ def sub_info(browser, user):
     captcha.send_keys(rsp.pred_rsp.value)
     sub_bt.click()
     try:
-        wait = WebDriverWait(driver, 10)
+        wait = WebDriverWait(browser, 10)
         wait.until(EC.alert_is_present())
         alert = browser.switch_to.alert
         if alert.text == "请输入有效验证码":
