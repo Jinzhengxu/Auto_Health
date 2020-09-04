@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
@@ -67,7 +68,7 @@ def sign_in(user):
         elif alert.text == "工号或密码错误，请重新输入！":
             logging.DEBUG("Password for user <{0}> is wrong, now try again.".format(user.uid))
         return 0;
-    except:
+    except TimeoutException:
         success_sub=0
         while success_sub==0:
             success_sub = sub_info(browser, user)
@@ -136,7 +137,7 @@ def sub_info(browser, user):
                 api = FateadmApi(app_id, app_key, pd_id, pd_key)
                 api.Justice(rsp.request_id)
         return 0;
-    except:
+    except TimeoutException:
         return 1;
 
 def mail(mail_text, mail_to):
