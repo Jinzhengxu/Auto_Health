@@ -40,7 +40,7 @@ pip3 install --upgrade requests
 #### 配置xclip
 ```
 sudo apt-get install libxss1 libappindicator1 libindicator7
-
+sudo apt-get install python3-tk python3-dev
 sudo apt-get install xclip
 ```
 #### 安装Chrome浏览器和chromedriver
@@ -60,10 +60,11 @@ unzip chromedriver_linux64.zip
 
 sudo mv chromedriver /usr/bin/ 
 ```
+```
 wget https://github.com/Jinzhengxu/Auto_Health/archive/master.zip
 
 unzip master.zip 
-
+```
 
 ### Mac OS X环境配置
 
